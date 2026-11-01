@@ -3,6 +3,10 @@ title = "News"
 description = "Recent updates and research milestones."
 
 [[news]]
+date = "Nov 2026"
+content = 'I was recognized as a \textcolor{red}{Top Reviewer} at \textbf{NeurIPS 2026} and an \textcolor{red}{Outstanding Reviewer} at \textbf{CoRL 2026}!'
+
+[[news]]
 date = "Sep 2026"
 content = 'Our \href{https://arxiv.org/pdf/2602.02977}{paper} was accepted to \textbf{NeurIPS 2026}.'
 
