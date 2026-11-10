@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
@@ -159,6 +160,22 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-QCZSWCMGXB"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-QCZSWCMGXB');
+              `}
+            </Script>
+          </>
+        )}
         <ThemeProvider>
           <LocaleProvider config={runtimeI18n}>
             <Navigation
